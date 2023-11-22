@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/home.css';
-import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const AdminForm = ({registered}) => {
