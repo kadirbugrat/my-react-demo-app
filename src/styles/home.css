@@ -4,7 +4,7 @@
   justify-content: center;
   height: 100vh;
   border-radius: 8px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
 }
 
 .register-form {
@@ -77,25 +77,22 @@
 }
 
 
-.vase-info-container {
-  background-color: lightblue;
-  padding: 20px;
-  margin-top: 20px;
-  width: 250px; 
-  display: inline-block; 
-  margin-right: 20px;
+.admin-panel {
+  background: rgb(110, 121, 136);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 8px;
+
 }
 
-
-.button-vase {
-  background-color: rgb(9, 61, 233)(0, 60, 255);
-  color: rgb(0, 0, 0);
-  padding: 10px 15px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  margin-top: 10px;
+.data-panel {
+  background-color: rgb(10, 8, 116);
+  padding: 20px;
+  width: 250px; 
   border-radius: 8px;
-  margin-left: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }

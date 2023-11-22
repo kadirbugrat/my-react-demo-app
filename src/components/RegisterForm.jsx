@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/home.css';
+import AdminForm from './AdminForm';
 
 
 const RegisterForm = ({ onRegister }) => {
@@ -8,6 +9,8 @@ const RegisterForm = ({ onRegister }) => {
     password: '',
     email: '',
   });
+
+  const [registered, setRegistered] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,13 +22,24 @@ const RegisterForm = ({ onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (formData.username !== 'admin' || formData.password !== '1234' || formData.email !=='admin@gmail.com') {
+      alert('Invalid username or password for registration.');
+      return;
+    }
+
     onRegister(formData);
+    setRegistered(true);
+
   };
 
   return (
     <div className='container'>
+      {registered ?  (
+        <AdminForm />
+      ) : (
       <div className='register-form'>
-        <h1>Register</h1>
+        <h1>Welcome Tarla Bahçe Sulama Ltd. Şti.</h1>
         <form onSubmit={handleSubmit}>
           <div className='label-input-container'>
             <label htmlFor='username'>Username:</label>
@@ -62,11 +76,12 @@ const RegisterForm = ({ onRegister }) => {
 
           <div className='button-container'>
             <button type='submit' className='button'>
-              Register
+              Login
             </button>
           </div>
         </form>
       </div>
+      )}
     </div>
   );
 };
